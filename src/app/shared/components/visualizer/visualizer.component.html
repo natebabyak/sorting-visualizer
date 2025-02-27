@@ -1,0 +1,11 @@
+<section class="visualizer">
+    <div class="bar-container">
+        @for (number of numbers; track number) {
+            <div
+                class="bar"
+                [style.height.vh]="number / numbers.length * 80"
+                [style.width.vw]="barWidth"
+            ></div>
+        }
+    </div>
+</section>

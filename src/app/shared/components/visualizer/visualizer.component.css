@@ -1,0 +1,9 @@
+.bar-container {
+    align-items: end;
+    display: flex;
+    width: 100%;
+}
+
+.bar {
+    background-color: var(--mat-sys-on-background);
+}
