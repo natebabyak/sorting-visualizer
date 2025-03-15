@@ -1,0 +1,14 @@
+footer {
+    border-top: 1px solid var(--senary-contrast);
+    bottom: 0;
+    left: 0;
+    margin-top: 2rem;
+    padding: 4rem 0 4rem 0;
+    position: static;
+    text-align: center;
+    width: 100%;
+}
+
+span {
+    color: var(--tertiary-contrast);
+}

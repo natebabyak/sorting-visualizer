@@ -6,35 +6,41 @@ import { Theme } from '../models/theme';
 })
 export class ThemeService {
   /**
-   * The current theme of the app.
+   * The theme of the app.
    */
   private theme: Theme;
 
+  /**
+   * Initializes the theme.
+   */
   constructor() {
     const saved = localStorage.getItem('data-theme') as Theme | null;
     this.theme = saved ?? 'system';
-    this.applyTheme();
+    this.updateTheme();
   }
 
   /**
-   * Gets the current theme of the app.
-   * @returns The current theme of the app.
+   * Gets the theme.
+   * @returns The theme.
    */
   public getTheme(): Theme {
     return this.theme;
   }
 
   /**
-   * Sets the theme of the app.
-   * @param theme The new theme of the app.
+   * Sets the theme.
+   * @param theme The theme.
    */
   public setTheme(theme: Theme): void {
     this.theme = theme;
     localStorage.setItem('data-theme', this.theme);
-    this.applyTheme();
+    this.updateTheme();
   }
 
-  private applyTheme(): void {
+  /**
+   * Updates the theme.
+   */
+  private updateTheme(): void {
     if (this.theme === 'system') {
       document.body.style.colorScheme = 'light dark';
     } else {

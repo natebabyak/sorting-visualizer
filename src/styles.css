@@ -4,6 +4,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body {
-    background-color: var(--mat-sys-background);
-    color: var(--mat-sys-on-background);
+    background-color: var(--page-background);
+    border-color: var(--septenary-contrast);
+    color: var(--full-contrast);
+}
+
+.clickable {
+    color: var(--tertiary-contrast);
+}
+
+.clickable:hover {
+    color: var(--primary-contrast);
 }

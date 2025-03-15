@@ -1,11 +1,26 @@
 <section class="visualizer">
     <div class="bar-container">
-        @for (number of numbers; track number) {
+        @for (number of getArray(); track number) {
             <div
                 class="bar"
-                [style.height.vh]="number / numbers.length * 80"
-                [style.width.vw]="barWidth"
+                [style.height.vh]="getBarheight(number)"
+                [style.width.vw]="getBarWidth()"
             ></div>
         }
     </div>
+    <mat-form-field>
+        <mat-label>
+            Number of bars
+        </mat-label>
+        <input matInput type="number" [(ngModel)]="numberOfBars">
+    </mat-form-field>
+    <mat-slider 
+        min="10" 
+        max="1000"
+        step="10"
+        (change)="updateBars()"
+    >
+        <input matSliderThumb [(ngModel)]="numberOfBars" #slider>
+    </mat-slider>
+    
 </section>
