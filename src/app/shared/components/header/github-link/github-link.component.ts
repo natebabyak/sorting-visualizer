@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './github-link.component.html',
   styleUrl: './github-link.component.css'
 })
-export class GithubLinkComponent {
-
-}
+export class GithubLinkComponent {}

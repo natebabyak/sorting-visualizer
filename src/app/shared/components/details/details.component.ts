@@ -1,7 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ComplexityLatexPipe } from '../../pipes/complexity-latex.pipe';
-import { IsInPlacePipe } from '../../pipes/is-in-place.pipe';
-import { IsStablePipe } from '../../pipes/is-stable.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { Algorithm } from '../../../core/models/algorithm';
 
@@ -9,9 +6,6 @@ import { Algorithm } from '../../../core/models/algorithm';
   selector: 'app-details',
   standalone: true,
   imports: [
-    ComplexityLatexPipe,
-    IsInPlacePipe,
-    IsStablePipe, 
     MatCardModule
   ],
   templateUrl: './details.component.html',

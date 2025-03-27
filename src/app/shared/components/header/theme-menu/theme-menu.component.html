@@ -1,25 +1,21 @@
-<div>
-    <button 
-        mat-icon-button 
+<div class="theme-menu-component">
+  <button
+    mat-icon-button
+    class="clickable"
+    [matMenuTriggerFor]="menu"
+  >
+    <mat-icon>{{ getTheme() | themeIcon }}</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    @for (theme of getThemes(); track theme) {
+      <button
+        mat-menu-item
         class="clickable"
-        [matMenuTriggerFor]="menu"
-    >
-        <mat-icon class="material-symbols-outlined">
-            {{ getTheme() | themeIcon }}
-        </mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-        @for (theme of getThemes(); track theme) {
-            <button 
-                mat-menu-item
-                class="clickable"
-                (click)="setTheme(theme)"
-            >
-                <mat-icon class="material-symbols-outlined">
-                    {{ theme | themeIcon }}
-                </mat-icon>
-                {{ theme | titlecase }}
-            </button>
-        }
-    </mat-menu>
+        (click)="setTheme(theme)"
+      >
+        <mat-icon>{{ theme | themeIcon }}</mat-icon>
+        {{ theme | titlecase }}
+      </button>
+    }
+  </mat-menu>
 </div>

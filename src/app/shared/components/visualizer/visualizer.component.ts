@@ -31,9 +31,9 @@ export class VisualizerComponent {
   private array: number[] = [];
   public numberOfBars: number = 100;
   private barWidth: number = 1;
-  
+
   constructor() {
-    this.array = this.arrayService.create(this.numberOfBars, 'random');
+    this.array = this.arrayService.create(this.numberOfBars);
   }
 
   public getBarheight(number: number): number {
@@ -49,6 +49,6 @@ export class VisualizerComponent {
   }
 
   public updateBars() {
-    this.array = this.arrayService.create(this.numberOfBars, 'random');
+    this.array = this.arrayService.create(this.numberOfBars);
   }
 }

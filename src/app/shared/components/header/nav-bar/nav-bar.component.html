@@ -1,0 +1,57 @@
+<div class="nav-bar-component">
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a
+      mat-icon-button
+      class="clickable"
+      routerLink="/"
+    >
+      <mat-icon>
+        home
+      </mat-icon>
+    </a>
+    <button
+      mat-button
+      class="clickable"
+      [matMenuTriggerFor]="algorithmsMenu"
+      #algorithmsTrigger="matMenuTrigger"
+      (mouseenter)="algorithmsTrigger.openMenu()"
+    >
+      Algorithms
+    </button>
+    <mat-menu
+      #algorithmsMenu="matMenu"
+      (mouseleave)="algorithmsTrigger.closeMenu()"
+    >
+      @for (algorithm of getAlgorithms(); track algorithm) {
+        <a
+          mat-button
+          class="clickable"
+          routerLink="/algorithm/{{ algorithm.id }}"
+        >
+          <span>
+            {{ algorithm.name }}
+          </span>
+        </a>
+      }
+    </mat-menu>
+    <button
+      mat-button
+      class="clickable"
+      [matMenuTriggerFor]="compareMenu"
+    >
+      Compare
+    </button>
+    <mat-menu #compareMenu="matMenu">
+      @for (algorithm of getAlgorithms(); track algorithm) {
+        <a
+          mat-button
+          class="clickable"
+          [routerLink]="'/compare/{{ algorithm.id }},'"
+        >
+          {{ algorithm.name }}
+        </a>
+      }
+    </mat-menu>
+  </nav>
+  <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+</div>
